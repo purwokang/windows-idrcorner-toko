@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import CardProduk from './CardProduk'
+import API from '../axios/Api'
 
 export class DaftarProduk extends Component {
 
@@ -8,18 +9,27 @@ export class DaftarProduk extends Component {
     }
 
     async componentDidMount() {
-        await axios.get('http://localhost/tokoAPI/ambildata.php')
+        await API.get('ambildata.php')
             .then(response => this.setState({
                 produk: response.data
             }))
 
-        console.log(this.state);
+        // console.log(this.state); mengintip hasil koneksi database
     }
 
     render() {
+
+        const renderData = this.state.produk.map(produk => {
+            return (
+                <CardProduk produk={produk} key={produk.id} />
+            )
+        })
+
         return (
-            <div>
-                Daftar Produk
+            <div className="container">
+                <div className='row'>
+                    {renderData}
+                </div>
             </div>
         )
     }
