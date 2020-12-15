@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CardProduk({ produk }) {
     return (
@@ -7,7 +8,13 @@ function CardProduk({ produk }) {
             <small>{produk.deskripsi}</small>
             <p>Harga: Rp. {produk.harga},-</p>
             <p>Stok: {produk.stok}</p>
-        </div>
+            <hr />
+            <Link to={'/edit/' + produk.id}>
+                <i className='fa fa-pencil-square-o' aria-hidden='true'></i>
+            </Link>
+            <br />
+
+        </div >
     )
 }
 
