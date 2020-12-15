@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import API from '../axios/Api'
+import { Link } from 'react-router-dom'
 
 
 export class AddProduk extends Component {
@@ -45,8 +46,12 @@ export class AddProduk extends Component {
                                 <td><input type="text" name='stok' onChange={this.handlerChange} /> </td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td><input type="submit" value='Add' className='btn btn-primary' /> </td>
+                                <td><Link exact to='/' className='btn btn-secondary'>Back</Link></td>
+                                <td>
+                                    <input type="submit" value='Add' className='btn btn-primary' />
+
+                                </td>
+
                             </tr>
                         </tbody>
                     </table>

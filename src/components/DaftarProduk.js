@@ -8,7 +8,7 @@ export class DaftarProduk extends Component {
         produk: []
     }
 
-    async componentDidMount() {
+    componentDidMount = async () => {
         await API.get('ambildata.php')
             .then(response => this.setState({
                 produk: response.data
@@ -21,7 +21,7 @@ export class DaftarProduk extends Component {
 
         const renderData = this.state.produk.map(produk => {
             return (
-                <CardProduk produk={produk} key={produk.id} />
+                <CardProduk produk={produk} key={produk.id} refresh={this.componentDidMount} />
             )
         })
 

@@ -60,7 +60,10 @@ export class EditProduk extends Component {
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type="submit" value='Edit' className='btn btn-primary' /> </td>
+                                <td>
+                                    <input type="submit" value='Ubah' className='btn btn-primary' />
+
+                                </td>
                             </tr>
                         </tbody>
                     </table>
